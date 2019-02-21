@@ -27,4 +27,10 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // 关联UserAddress模型
+    public function addresses()
+    {
+        return $this->hasMany(UserAddress::class);
+    }
 }
