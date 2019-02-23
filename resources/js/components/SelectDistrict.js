@@ -72,14 +72,14 @@ Vue.component('select-district', {
             value = _.filter(value);
             // 如果数组长度为0，则将省清空（由于我们定义了观察器，会联动触发将城市和地区清空）
             if (value.length === 0) {
-                this.pronvinceId = '';
+                this.provinceId = '';
                 return;
             }
             // 从当前省列表中找到与数组第一个元素同名的项的索引
             const provinceId = _.findKey(this.provinces, o => o === value[0]);
             // 没找到，清空省的值
             if (!provinceId) {
-                this.pronvinceId = '';
+                this.provinceId = '';
                 return;
             }
             // 找到了，将当前省设置成对应的ID
@@ -96,7 +96,7 @@ Vue.component('select-district', {
             this.cityId = cityId;
             // 由于观察器的作用，这个时候地区列表已经就了对应的地区列表
             // 从当前地区列表找到与数组第三个元素同名的项的索引
-            const districtId = _.findKey(addressData[cityId], o => o === value[3]);
+            const districtId = _.findKey(addressData[cityId], o => o === value[2]);
             // 没找到，清空地区的值
             if (!districtId) {
                 this.districtId = '';

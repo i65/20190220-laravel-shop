@@ -1999,6 +1999,10 @@ es-to-primitive@^1.2.0:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
+es6-object-assign@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/es6-object-assign/download/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
+
 es6-templates@^0.2.3:
   version "0.2.3"
   resolved "http://registry.npm.taobao.org/es6-templates/download/es6-templates-0.2.3.tgz#5cb9ac9fb1ded6eb1239342b81d792bbb4078ee4"
@@ -4314,6 +4318,10 @@ promise-inflight@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/promise-inflight/download/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
 
+promise-polyfill@^6.0.2:
+  version "6.1.0"
+  resolved "http://registry.npm.taobao.org/promise-polyfill/download/promise-polyfill-6.1.0.tgz#dfa96943ea9c121fca4de9b5868cb39d3472e057"
+
 proxy-addr@~2.0.4:
   version "2.0.4"
   resolved "http://registry.npm.taobao.org/proxy-addr/download/proxy-addr-2.0.4.tgz#ecfc733bf22ff8c6f407fa275327b9ab67e48b93"
@@ -5101,6 +5109,13 @@ svgo@^1.0.0:
     stable "~0.1.6"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sweetalert@^2.1.2:
+  version "2.1.2"
+  resolved "http://registry.npm.taobao.org/sweetalert/download/sweetalert-2.1.2.tgz#010baaa80d0dbdc86f96bfcaa96b490728594b79"
+  dependencies:
+    es6-object-assign "^1.1.0"
+    promise-polyfill "^6.0.2"
 
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.1"

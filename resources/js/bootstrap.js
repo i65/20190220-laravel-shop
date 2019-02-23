@@ -1,4 +1,6 @@
 
+// 用于用户删除时的二次确认
+require('sweetalert');
 window._ = require('lodash');
 
 /**
