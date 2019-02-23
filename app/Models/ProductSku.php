@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ModelsProductSku extends Model
+class ProductSku extends Model
 {
     //
     protected $fillable = [
