@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use Illuminate\Support\Facades\DB;
+use App\Exceptions\InvalidRequestException;
 
 class ProductsController extends Controller
 {
     // 首页
     public function index(Request $request)
-    {
-        DB::enableQueryLog();
+    {       
         // 创建一个查询构造器
         $builder = Product::query()->where('on_sale', true);
 
@@ -43,7 +42,7 @@ class ProductsController extends Controller
             }
         }
         $products = $builder->paginate(16);
-        DB::getQueryLog();
+        
         return view('products.index', [
             'products' => $products,
             'filters' => [
@@ -58,7 +57,7 @@ class ProductsController extends Controller
     {
         // 判断商品是否已经上架， 如果没有上架则抛出异常
         if (!$product->on_sale) {
-            throw new \Exception('商品未上架');
+            throw new InvalidRequestException('商品未上架');
         }
 
         return view('products.show', ['product' => $product]);
