@@ -44,7 +44,7 @@ class AddCartRequest extends Request
         ];
     }
 
-    public function message()
+    public function messages()
     {
         return [
             'sku_id.required' => '请选择商品',
