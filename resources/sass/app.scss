@@ -61,8 +61,8 @@ body{
   }
 }
 
-// 商品列表样式 
-.products-index-page {
+// 商品列表样式 ,收藏列表商品样式
+.products-index-page, .products-favorites-page {
   .pagination {
     margin-right: 5px;
   }
