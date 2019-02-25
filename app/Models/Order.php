@@ -49,6 +49,14 @@ class Order extends Model
         'extra',
     ];
 
+    protected $casts = [
+        'closed' => 'boolean',
+        'reviewed' => 'boolean',
+        'address' => 'json',
+        'ship_data' => 'json',
+        'extra' => 'json',
+    ];
+
     protected $dates = [
         'paid_at',
     ];
