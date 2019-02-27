@@ -160,11 +160,12 @@
                         amount: $input.val(),
                     })
                 });
+                
                 axios.post('{{ route('orders.store') }}', req)
                     .then(function (response) {
                         swal('订单提交成功', '', 'success')
                         .then(function () {
-                            location.herf='/orders/' + response.data.id;
+                            location.href='/orders/' + response.data.id;
                         })
                     }, function(error) {
                         
