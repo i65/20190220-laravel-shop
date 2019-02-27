@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // 往服务容器中注入一个名为 alipay 的单例对象
         $this->app->singleton('alipay', function () {
-            $config = config('app.alipay');
+            $config = config('pay.alipay');
             // 判断当前项目运行环境是否为线上环境
             if (app()->environment() !== 'production') {
                 // 开发模式 
@@ -42,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton('wechat_pay', function () {
-            $config = config('app.wechat');
+            $config = config('pay.wechat');
             // 判断当前项目运行环境是否为线上环境
             if (app()->environment() !== 'production') {                
                 $config['log']['level'] = Logger::DEBUG;
