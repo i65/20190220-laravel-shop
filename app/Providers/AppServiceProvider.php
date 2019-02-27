@@ -49,6 +49,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('wechat_pay', function () {
             $config = config('pay.wechat');
             // 判断当前项目运行环境是否为线上环境
+            $config['notify_url'] = 'http://requestbin.fullcontact.com/16v53h91';
             if (app()->environment() !== 'production') {                
                 $config['log']['level'] = Logger::DEBUG;
             } else {
