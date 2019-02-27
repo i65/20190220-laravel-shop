@@ -164,7 +164,7 @@
                     .then(function (response) {
                         swal('订单提交成功', '', 'success')
                         .then(function () {
-                            location.reload();
+                            location.herf='/orders/' + response.data.id;
                         })
                     }, function(error) {
                         
