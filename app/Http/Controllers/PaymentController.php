@@ -8,6 +8,8 @@ use App\Exceptions\InvalidRequestException;
 use Carbon\Carbon;
 use Endroid\QrCode\QrCode;//将支付 url 转成二维码
 
+use App\Events\OrderPaid;
+
 class PaymentController extends Controller
 {
     // 支付宝支付
@@ -69,6 +71,7 @@ class PaymentController extends Controller
             'payment_no' => $data->trade_no, // 支付宝订单号
         ]);
 
+        $this->afterPaid($order);
         return app('alipay')->success();
         // \Log::debug('Alipay notify', $data->all());
     }
@@ -119,7 +122,13 @@ class PaymentController extends Controller
             'payment_method' => 'wechat',
             'payment_no' => $data->transaction_id,
         ]);
+        $this->afterPaid($order);
 
         return app('wechat_pay')->success();
+    }
+
+    public function afterPaid(Order $order)
+    {
+        event(new OrderPaid($order));
     }
 }
