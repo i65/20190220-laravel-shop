@@ -107,4 +107,26 @@ class OrdersController extends Controller
 
         // return $order;
     }
+
+    // 确认收货
+    public function received(Order $order, Request $request)
+    {
+        // 检验权限
+        $this->authorize('own', $order);
+
+        // 判断订单是否为已发货
+        if ($order->ship_status !== Order::SHIP_STATUS_DELIVERED) {
+            throw new InvalidRequestException('发货状态不正确');
+        }
+
+        // 更新发货状态为已收到
+        $order->update([
+            'ship_status' => Order::SHIP_STATUS_RECEIVED
+        ]);
+
+        // 返回原页面
+        // return redirect()->back();
+        // 由于我们把确认收货的操作从表单提交改成了 AJAX 请求，因此控制器中的返回值需要修改一下
+        return $order;
+    }
 }
