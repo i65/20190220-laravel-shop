@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
             $config = config('pay.alipay');
             // 服务器端回调路径
             // $config['notify_url'] = route('payment.alipay.notify');
-            $config['notify_url'] = 'http://requestbin.fullcontact.com/16v53h91';
+            $config['notify_url'] = 'http://requestbin.fullcontact.com/1g09miv1';
             // 前端回调路径
             $config['return_url'] = route('payment.alipay.return');
             // 判断当前项目运行环境是否为线上环境

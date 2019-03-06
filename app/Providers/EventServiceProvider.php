@@ -12,7 +12,7 @@ use App\Events\OrderPaid;
 use App\Listeners\UpdateProductSoldCount;
 
 use App\Events\OrderReviewed;
-use App\Listener\UpdateProductRating;
+use App\Listeners\UpdateProductRating;
 
 class EventServiceProvider extends ServiceProvider
 {
