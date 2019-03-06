@@ -88,12 +88,7 @@
                             @endif
                             <!-- 如果订单的发货状态为已发货则展示确认收货按钮 -->
                             @if($order->ship_status === \App\Models\Order::SHIP_STATUS_DELIVERED)
-                                <div class="receive-button">
-                                    <!-- <form action="{{ route('orders.received', [$order->id]) }}" method="post">
-                                        csrf token 不能忘
-                                        //{{ //csrf_field() }}
-                                        <button type="submit" class="btn btn-sm btn-success">确认收货</button>
-                                    </form> -->
+                                <div class="receive-button">                                    
                                     <!-- 将原本的表单替换成下面这个按钮 -->
                                     <button id="btn-receive" class="btn btn-sm btn-success">确认收货</button>
                                 </div>

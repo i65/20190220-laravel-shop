@@ -44,6 +44,11 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 
     Route::get('payment/{order}/wechat', 'PaymentController@payByWechat')->name('payment.wechat');
 
+    // 评价页面
+    Route::get('orders/{order}/review', 'OrdersController@review')->name('orders.review.show');
+    // 提交评价
+    Route::post('orders/{order}/review', 'OrdersController@sendReview')->name('orders.review.store');
+
 });
 
 Route::get('products/{product}', 'ProductsController@show')->name('products.show');
