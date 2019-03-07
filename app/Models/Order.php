@@ -90,6 +90,12 @@ class Order extends Model
         return $this->hasMany(OrderItem::class);
     }
 
+    // Order 与 CouponCode 的关联
+    public function couponCode()
+    {
+        return $this->belongsTo(CouponCode::class);
+    }
+
     public static function findAvailableNo()
     {
         // 订单流水号前缀
