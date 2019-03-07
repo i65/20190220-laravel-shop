@@ -35,7 +35,7 @@
                                 </td>
                                 <td class="sku-price text-center vertical-middle">￥{{ $item->product->price }}</td>
                                 <td class="sku-amount text-center vertical-middle">{{ $item->amount }}</td>
-                                <td class="item-amount text-center vertical-middle">￥{{ number_format($item->price * $item->amount, 2, '.', '') }}</td>
+                                <td class="item-amount text-center vertical-middle">￥{{ number_format($item->product->price * $item->amount, 2, '.', '') }}</td>
                             </tr>
                         @endforeach
                         <tr><td colspan="4"></td></tr>
@@ -70,6 +70,14 @@
                             @endif
                         </div>
                         <div class="order-summary text-right">
+                            <!-- 展示优惠信息开始 -->
+                            @if($order->couponCode)
+                            <div class="text-primary">
+                                <span>优惠信息：</span>
+                                <div class="value">{{ $order->couponCode->description }}</div>
+                            </div>
+                            @endif
+                            <!-- 展示优惠信息结束 -->
                             <div class="total-amount">
                                 <span>订单总价：</span>
                                 <div class="value">￥{{ $order->total_amount }}</div>
