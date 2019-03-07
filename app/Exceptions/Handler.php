@@ -15,7 +15,7 @@ class Handler extends ExceptionHandler
     protected $dontReport = [
         // 屏蔽指定异常写日志
         InvalidRequestException::class,
-
+        CouponCodeUnavailableException::class,
     ];
 
     /**
@@ -25,7 +25,7 @@ class Handler extends ExceptionHandler
      */
     protected $dontFlash = [
         'password',
-        'password_confirmation',
+        'password_confirmation',        
     ];
 
     /**
